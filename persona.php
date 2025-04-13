@@ -46,6 +46,12 @@ class Persona{
 
 	//metodo toString_
     public function toString_(){
-        
+        return "Nombre: " . $this->getNombre . "\n" . 
+        "Apellido: " . $this->getApellido . "\n" . 
+        "DNI: " .$this->getDni .  "\n" . 
+        "Direccion: " . $this->getDireccion . "\n" .
+        "Mail: " . $this->getMail . "\n" . 
+        "Telefono: " . $this->getTelefono . "\n" . 
+        "Neto: " . $this->getNeto . "\n";  
     }
 }
