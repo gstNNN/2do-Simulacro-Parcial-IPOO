@@ -7,11 +7,12 @@ class Cuota {
     private $cancelada;
 
     //metodo constructor
-    public function __construct($numero,  $montoCuota,  $montoInteres)
-    {$this->numero = $numero;
+    public function __construct($numero,  $montoCuota,  $montoInteres){
+    $this->numero = $numero;
     $this->montoCuota = $montoCuota;
     $this->montoInteres = $montoInteres;
-    $this->cancelada = false;}
+    $this->cancelada = false;
+}
     
     //metodos de acceso(getters)
     public function getNumero() {return $this->numero;}
@@ -31,6 +32,17 @@ class Cuota {
 
 	public function setCancelada($estado) {
         $this->cancelada = $estado;
+    }
+
+    public function toString_(){
+        return 
+        "Numero: " . $this->getNumero . "\n" . 
+        "Monto de la Cuota: " . $this->getMontoCuota . "\n" . 
+        "Monto del Interes: " . $this->getMontoInteres . "\n";
+    }
+
+    public function darMontoFinalCouta(){
+        return $this->getMontoCuota + $this->getMontoInteres;
     }
 
 }
