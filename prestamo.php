@@ -67,9 +67,9 @@ class Prestamo{
     public function darSiguienteCuotaPagar(){
         $cuotaPagar = null;
         $i = 0;
-        while($cuotaPagar == null && $i < $this->getCantidadCuotas()){
+        while($cuotaPagar == null && $i < $this->getCantidadCuotas() && count($this->getColeccionCuotas())> 0){
             $cuotaActual = $this->getColeccionCuotas()[$i];
-            if($cuotaActual->getCancelada() !== false){
+            if(!$cuotaActual->getCancelada()){
                 $cuotaPagar = $cuotaActual;
             }
             $i++;

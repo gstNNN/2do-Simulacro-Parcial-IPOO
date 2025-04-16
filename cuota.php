@@ -36,13 +36,16 @@ class Cuota {
 
     public function __toString(){
         return 
-        "Numero: " . $this->getNumero() . "\n" . 
-        "Monto de la Cuota: " . $this->getMontoCuota() . "\n" . 
-        "Monto del Interes: " . $this->getMontoInteres() . "\n";
+        "\nDetalles de la Cuota:\n" . 
+        "---------------------------------\n" . 
+        "Número de Cuota: " . $this->getNumero() . "\n" . 
+        "Monto de la Cuota: $" . $this->getMontoCuota() . "\n" . 
+        "Monto de Interés: $" . $this->getMontoInteres() . "\n" . 
+        "---------------------------------\n";
     }
 
-    public function darMontoFinalCouta(){
-        return $this->getMontoCuota() + $this->getMontoInteres();
+    public function darMontoFinalCuota(){
+        return "Monto final de la Cuota:" . $this->getMontoCuota() + $this->getMontoInteres() . "\n---------------------------------\n" ;
     }
 
 }

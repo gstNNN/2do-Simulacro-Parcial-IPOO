@@ -29,10 +29,14 @@ class Financiera{
 
     public function otorgarPrestamoSiCalifica(){
         foreach($this->colPrestamo as $newPrestamo){ 
-            if(count($prestamo->getColeccionCuotas()) == 0){ //Validamos que el array este vacio
-                $califica = $this->getMonto() / $this->cantidadCuotas;
-                $neto40 = $this->getMonto() * 0.4; //Saco el 40% del total neto.
-                if($califica < $neto40){ //Si es menor al 40% otorgo el prestamo.
+            if(count($newPrestamo->getColeccionCuotas()) == 0){ //Validamos que el array este vacio
+                $monto = $newPrestamo->getMonto();
+                $cantidadCuotas = $newPrestamo->getCantidadCuotas();
+                $persona = $newPrestamo->getRefPersona();
+                $valorCuota = $monto / $cantidadCuotas; //Calculo el valor de la cuota.
+                $neto = $persona->getNeto(); //Obtengo el sueldo neto de la persona.
+                $neto40 = $monto * 0.4; //Calculo el 40% del sueldo neto.
+                if($valorCuota < $neto40){ //Si es menor al 40% otorgo el prestamo.
                     $newPrestamo->otorgarPrestamo();
                 }
             }
