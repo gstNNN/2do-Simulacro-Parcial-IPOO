@@ -34,15 +34,15 @@ class Cuota {
         $this->cancelada = $estado;
     }
 
-    public function toString_(){
+    public function __toString(){
         return 
-        "Numero: " . $this->getNumero . "\n" . 
-        "Monto de la Cuota: " . $this->getMontoCuota . "\n" . 
-        "Monto del Interes: " . $this->getMontoInteres . "\n";
+        "Numero: " . $this->getNumero() . "\n" . 
+        "Monto de la Cuota: " . $this->getMontoCuota() . "\n" . 
+        "Monto del Interes: " . $this->getMontoInteres() . "\n";
     }
 
     public function darMontoFinalCouta(){
-        return $this->getMontoCuota + $this->getMontoInteres;
+        return $this->getMontoCuota() + $this->getMontoInteres();
     }
 
 }

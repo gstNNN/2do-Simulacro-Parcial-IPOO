@@ -69,7 +69,7 @@ class Prestamo{
         $i = 0;
         while($cuotaPagar == null && $i < $this->getCantidadCuotas()){
             $cuotaActual = $this->getColeccionCuotas()[$i];
-            if($cuotaActual->getCancelada() == false){
+            if($cuotaActual->getCancelada() !== false){
                 $cuotaPagar = $cuotaActual;
             }
             $i++;
@@ -77,7 +77,7 @@ class Prestamo{
         return $cuotaPagar;
     }
 
-    public function toString_(){
+    public function __toString(){
         return 
         "Identificacion: " . $this->getIdentificacion() . "\n" .
         "Fecha Otorgamiento: " . $this->getFechaOtorgamiento() . "\n" .
